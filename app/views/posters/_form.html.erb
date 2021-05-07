@@ -1,3 +1,4 @@
+<div class="d-flex justify-content-center flex-column m-auto" style="width:fit-content;">
 <%= form_with(model: poster) do |form| %>
   <% if poster.errors.any? %>
     <div id="error_explanation">
@@ -12,31 +13,33 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.label :Titre %>
+    <%= form.text_field :title, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :author %>
-    <%= form.text_field :author %>
+    <%= form.label :Auteur %>
+    <%= form.text_field :author, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name %>
+    <%= form.label :Prénom %>
+    <%= form.text_field :first_name, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name %>
+    <%= form.label :Nom%>
+    <%= form.text_field :last_name, class:"form-control" %>
   </div>
 
   <div class="field">
-    <%= form.label :picture %>
-    <%= form.text_field :picture %>
+    <%= form.label :URL_de_l_Affiche %>
+    <%= form.text_field :picture, class:"form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+  <p class="text-center"><%= form.submit "Envoyer", class:"btn btn-primary" %></p>
   </div>
 <% end %>
+</div>
+

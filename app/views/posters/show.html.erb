@@ -1,29 +1,24 @@
-<p id="notice"><%= notice %></p>
+<div class="d-flex justify-content-center flex-column m-auto" style="width:fit-content;">
+  <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @poster.title %>
-</p>
+  <p class="h1 text-center " style="font-weight: 600;">
+    <%= @poster.title %>
+  </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @poster.author %>
-</p>
+  <p class="mt-5">
+    <img src="<%= @poster.picture %>" class="poster_img">
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @poster.first_name %>
-</p>
+  <p style="font-size:20px;">
+    <strong>Par</strong>
+    <%= @poster.first_name %>
+    <%= @poster.last_name %>
+    (Allias <%= @poster.author %>)
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @poster.last_name %>
-</p>
 
-<p>
-  <strong>Picture:</strong>
-  <img src="<%= @poster.picture %>">
-</p>
-
-<%= link_to 'Edit', edit_poster_path(@poster) %> |
-<%= link_to 'Back', posters_path %>
+  <div class="d-flex justify-content-center">
+    <%= link_to 'Editer', edit_poster_path(@poster) %> |
+    <%= link_to 'Retour ', posters_path %>
+  </div>
+</div>

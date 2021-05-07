@@ -15,5 +15,28 @@
  */
 
 img {
-    width: 100px;
+    width: 340px;
+}
+
+.logo {
+    width: 50px;
+    height: auto;
+}
+
+td {
+    font-size: 20px;
+}
+
+.containerBody {
+    margin: 50px;
+    margin-bottom: 100px;
+}
+
+.poster_img {
+    width: 900px;
+    height: auto;
+}
+
+.button_center {
+    margin: auto;
 }

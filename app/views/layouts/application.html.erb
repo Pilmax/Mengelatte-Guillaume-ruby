@@ -14,24 +14,16 @@
     <header class="p-3 bg-dark text-white">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+          <img src="https://us.123rf.com/450wm/fayethequeen/fayethequeen1611/fayethequeen161100085/68500137-joystick-joypad-game-controller-ic%C3%B4ne-logo-vintage-illustration-r%C3%A9tro-stock-vector-plate.jpg?ver=6" class="logo">
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><%= link_to  'Accueil', root_path, class:"nav-link px-2 text-secondary" %></li>
-          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
-          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+          <li><%= link_to  'Accueil', root_path, class:"nav-link px-2 ml-3 h5 text-white" %></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control form-control-dark" placeholder="Search...">
-        </form>
         <div class="text-end">    
              <% if user_signed_in? %> 
-                <%= current_user.email%>
+             <%= link_to  current_user.email, edit_user_registration_path, class:"btn btn-light" %>
                 <%= link_to  'Deconnexion', destroy_user_session_path, method: :delete, class:"btn btn-warning" %>
               <% else %>
               <%= link_to  'Connexion', new_user_session_path, class:"btn btn-warning" %>
@@ -41,8 +33,17 @@
       </div>
     </div>
     </header>
+    <div class="containerBody">
     <%= yield %>
-    
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-warning" %>
+    </div>
+
+    <footer class=" w-100 bg-light text-center text-lg-start navbar fixed-bottom d-flex justify-content-center">
+      <!-- Copyright -->
+      <div class="text-center p-3 w-100" style="background-color: rgba(0, 0, 0, 0.2);">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://google.com/">MENGELATTE Guillaume</a>
+      </div>
+      <!-- Copyright -->
+    </footer>
   </body>
 </html>
