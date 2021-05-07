@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MengelatteGuillaumeRuby</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="m-0">
+    <header class="p-3 bg-dark text-white">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+          <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+          <li><%= link_to  'Accueil', root_path, class:"nav-link px-2 text-secondary" %></li>
+          <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+          <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+        </ul>
+
+        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+          <input type="search" class="form-control form-control-dark" placeholder="Search...">
+        </form>
+        <div class="text-end">    
+             <% if user_signed_in? %> 
+                <%= current_user.email%>
+                <%= link_to  'Deconnexion', destroy_user_session_path, method: :delete, class:"btn btn-warning" %>
+              <% else %>
+              <%= link_to  'Connexion', new_user_session_path, class:"btn btn-warning" %>
+              <%= link_to  'Inscription', new_user_registration_path, class:"btn btn-outline-light me-2" %>
+              <% end %>
+        </div>
+      </div>
+    </div>
+    </header>
+    <%= yield %>
+    
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class:"btn btn-warning" %>
+  </body>
+</html>
